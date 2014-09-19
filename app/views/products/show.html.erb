@@ -1,0 +1,31 @@
+
+
+
+
+<%= link_to 'Back', products_path %>
+
+<div class="row">
+  <div class="col-md-offset-2 col-md-8">
+    <div class="panel panel-default">
+      <div class="panel-heading center">
+        <%= image_tag @product.image.url(:medium) %>
+      </div>
+      <div class="panel-body">
+        <p><%= @product.name %></p>
+        <p><%= @product.description %></p>
+        
+        <% if user_signed_in? %>
+         <%= link_to edit_product_path(@product) do%>
+         <span class="glyphicon glyphicon-add"></span>
+         Edit
+         <% end %>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<%= render '/inquiries/form' %>
+

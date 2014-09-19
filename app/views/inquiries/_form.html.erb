@@ -1,0 +1,32 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h2>Inquiry</h2>
+  </div>
+  <div class="panel-body">
+    <%= form_for Inquiry.new  do |f| %>
+        
+    <div class="form-group">
+        <%= f.label :name %>
+        <%= f.text_field :name, autofocus: true, class: "form-control" %>
+      </div>
+    <div class="form-group">
+      <%= f.label :email %><br />
+      <%= f.text_field :email, autofocus: true , class: "form-control"%>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :quantity %> <br />
+      <%= f.number_field :quantity, autocomplete: "off" , class: "form-control"%>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :description %><br />
+      <%= f.text_field :description, autocomplete: "off" , class: "form-control"%>
+    </div>
+
+    <div class="form-group">
+      <%= f.submit "submit" , class: "btn btn-primary"%>
+    </div>
+    <% end %>
+  </div>
+  

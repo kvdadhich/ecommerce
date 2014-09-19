@@ -1,0 +1,30 @@
+<h1>Listing inquiries</h1>
+
+
+<div class="col-md-10 col-md-offset-1">   
+  <div class="table-responsive">
+     <table class="table">
+       <thead>
+         <tr>
+           <th>Name</th>
+           <th>Email</th>
+          <th>Quantity</th>
+          <th>Show</th>
+         </tr>
+      </thead>
+
+       <tbody>
+         <% @inquiries.each do |inquiry| %>
+           <tr>
+             <td><%= inquiry.name %></td>
+             <td><%= inquiry.email %></td>
+             <td><%= inquiry.quantity %></td>
+             <td><%= link_to 'Show', inquiry %></td>
+           </tr>
+        <% end %>
+       </tbody>
+     </table>
+   </div>
+ </div>
+
+

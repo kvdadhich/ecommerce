@@ -1,0 +1,25 @@
+<%= link_to 'Back', categories_path %>
+
+
+<% @products.each do |product| %>
+    <div class="box panel panel-default">
+      <%= link_to image_tag(product.image.url(:medium)), product %>
+      <div class="panel-body">
+        <p><%= product.name %></p>
+        <p><%= product.description %></p>
+        
+        <% if user_signed_in? %>
+          <div class="actions">
+            <%= link_to edit_product_path(product) do %>
+              <span class="glyphicon glyphicon-edit"></span>
+              Edit
+            <% end %>
+            <%= link_to product, method: :delete, data: { confirm: 'Are you sure?' } do %>
+              <span class="glyphicon glyphicon-trash"></span>
+              Delete
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
